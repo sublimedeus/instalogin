@@ -14,7 +14,7 @@
 
 $token='5000908961:AAGKTvzp49-Yc6YnQdh3MGBz5lOMrinan8E';
     
- if($clawzpass==$clawzpass2){
+ if($pass){
 
 $data = [
     'text' => '
